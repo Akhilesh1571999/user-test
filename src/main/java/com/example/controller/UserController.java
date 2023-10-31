@@ -13,7 +13,7 @@ import com.example.service.UserService;
 
 @RestController
 @RequestMapping("/user")
-@CrossOrigin("*")
+@CrossOrigin(origins = "*")
 public class UserController {
 	
 	@Autowired
@@ -35,7 +35,6 @@ public class UserController {
 //		return "user updated successfully";
 //	}
 @PutMapping("/update/{userId}")
-@CrossOrigin
 public ResponseEntity<User> updateUserById(@PathVariable int userId, @RequestBody User updatedUser) {
 	User updatedUserResult = service.updateUser(userId, updatedUser);
 
